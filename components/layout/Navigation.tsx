@@ -23,11 +23,14 @@ export default function Navigation() {
           <Link
             key={item.href}
             href={item.href}
-            className={`text-sm font-medium transition-colors hover:text-primary ${
+            className={`text-sm font-medium transition-colors hover:text-accent-600 relative ${
               isActive ? 'text-foreground' : 'text-muted-foreground'
             }`}
           >
             {item.label}
+            {isActive && (
+              <span className="absolute -bottom-5 left-0 right-0 h-0.5 bg-accent-600 rounded-full" />
+            )}
           </Link>
         )
       })}
