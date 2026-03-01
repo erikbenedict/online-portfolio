@@ -1,7 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Badge } from "@/components/ui";
 import { Award, Users, Briefcase, ArrowUpRight } from "lucide-react";
+import { fadeUp, staggerContainer, viewportConfig } from "@/lib/animations";
 
 const highlights = [
   {
@@ -29,8 +31,15 @@ export default function AboutSection() {
     <section id="about" className="section">
       <div className="container">
         <div className="max-w-6xl mx-auto">
+
           {/* Header */}
-          <div className="mb-16">
+          <motion.div
+            className="mb-16"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
             <Badge variant="secondary" className="mb-4">
               About Me
             </Badge>
@@ -38,12 +47,19 @@ export default function AboutSection() {
               Engineer. Leader.{" "}
               <span className="gradient-text">Problem Solver.</span>
             </h2>
-          </div>
+          </motion.div>
 
           {/* Two-column layout */}
           <div className="grid lg:grid-cols-2 gap-16 items-start">
+
             {/* Story */}
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+            <motion.div
+              className="space-y-6 text-lg text-muted-foreground leading-relaxed"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
               <p>
                 I'm a full-stack engineer at a startup consultancy, building
                 production-ready systems for client projects. My work spans the
@@ -85,34 +101,40 @@ export default function AboutSection() {
                 Download Resume
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
-            </div>
+            </motion.div>
 
-            <div className="space-y-8">
-              {/* Highlight cards */}
-              <div className="space-y-4">
-                {highlights.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.title}
-                      className="flex gap-4 rounded-xl border bg-white p-5 shadow-sm"
-                    >
-                      <div className="shrink-0 w-10 h-10 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="text-base font-semibold text-foreground mb-1">
-                          {item.title}
-                        </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {item.description}
-                        </p>
-                      </div>
+            {/* Highlight cards */}
+            <motion.div
+              className="space-y-4"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
+              {highlights.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.title}
+                    variants={fadeUp}
+                    className="flex gap-4 rounded-xl border bg-white p-5 shadow-sm"
+                  >
+                    <div className="shrink-0 w-10 h-10 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center">
+                      <Icon className="w-5 h-5" />
                     </div>
-                  );
-                })}
-              </div>
-            </div>
+                    <div>
+                      <h4 className="text-base font-semibold text-foreground mb-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+
           </div>
         </div>
       </div>

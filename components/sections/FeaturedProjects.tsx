@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui'
 import { getFeaturedProjects } from '@/lib/projects'
 import ProjectCard from './ProjectCard'
+import { fadeUp, staggerContainer, viewportConfig } from '@/lib/animations'
 
 export default function FeaturedProjects() {
   const projects = getFeaturedProjects()
@@ -16,8 +18,15 @@ export default function FeaturedProjects() {
     <section id="projects" className="section">
       <div className="container">
         <div className="max-w-6xl mx-auto">
+
           {/* Header */}
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
             <Badge variant="secondary" className="mb-4">
               Featured Work
             </Badge>
@@ -28,20 +37,28 @@ export default function FeaturedProjects() {
               Production systems built for real clients with real impact.
               Click any project to explore the details.
             </p>
-          </div>
+          </motion.div>
 
           {/* Project list */}
-          <div className="space-y-4">
+          <motion.div
+            className="space-y-4"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
             {projects.map((project, index) => (
-              <ProjectCard
-                key={project.slug}
-                project={project}
-                index={index}
-                isOpen={expandedSlug === project.slug}
-                onToggle={() => toggle(project.slug)}
-              />
+              <motion.div key={project.slug} variants={fadeUp}>
+                <ProjectCard
+                  project={project}
+                  index={index}
+                  isOpen={expandedSlug === project.slug}
+                  onToggle={() => toggle(project.slug)}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

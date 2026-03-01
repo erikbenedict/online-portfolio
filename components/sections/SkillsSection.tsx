@@ -1,9 +1,11 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui'
 import { getSkillsByCategory } from '@/lib/skills'
 import type { Skill } from '@/types'
 import { Monitor, Server, Cloud, Wrench } from 'lucide-react'
+import { fadeUp, staggerContainer, viewportConfig } from '@/lib/animations'
 
 type CategoryConfig = {
   key: Skill['category']
@@ -23,8 +25,15 @@ export default function SkillsSection() {
     <section id="skills" className="section bg-muted">
       <div className="container">
         <div className="max-w-6xl mx-auto">
+
           {/* Header */}
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
             <Badge variant="secondary" className="mb-4">
               Tech Stack
             </Badge>
@@ -34,10 +43,16 @@ export default function SkillsSection() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Full-stack breadth from React frontends to Azure cloud infrastructure.
             </p>
-          </div>
+          </motion.div>
 
           {/* Certification callout */}
-          <div className="mb-12 rounded-xl bg-gradient-to-r from-primary-700 to-accent-600 p-px">
+          <motion.div
+            className="mb-12 rounded-xl bg-gradient-to-r from-primary-700 to-accent-600 p-px"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
             <div className="rounded-xl bg-white px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="w-12 h-12 shrink-0">
                 <img
@@ -58,14 +73,24 @@ export default function SkillsSection() {
                 <Badge variant="accent">Certified</Badge>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Skills grid */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <motion.div
+            className="grid md:grid-cols-2 gap-6"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
             {categories.map(({ key, label, icon: Icon }) => {
               const skills = getSkillsByCategory(key)
               return (
-                <div key={key} className="rounded-xl bg-white p-6 shadow-sm">
+                <motion.div
+                  key={key}
+                  variants={fadeUp}
+                  className="rounded-xl bg-white p-6 shadow-sm"
+                >
                   {/* Category header */}
                   <div className="flex items-center gap-3 mb-6 pb-4 border-b border-accent-500">
                     <div className="w-8 h-8 rounded-lg bg-accent-500 flex items-center justify-center shrink-0">
@@ -92,10 +117,11 @@ export default function SkillsSection() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               )
             })}
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
