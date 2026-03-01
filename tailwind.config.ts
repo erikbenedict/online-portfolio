@@ -9,33 +9,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary
+        // Primary — warm dark charcoal
         primary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
+          50: '#f9f8f6',
+          100: '#f0ede8',
+          200: '#e0dbd2',
+          300: '#c8c0b3',
+          400: '#ada08f',
+          500: '#96836f',
+          600: '#7d6a58',
+          700: '#655549',
+          800: '#43382f',
+          900: '#2a231d',
+          950: '#1a1510',
         },
-        // Accent
+        // Accent — olive / army green
         accent: {
-          50: '#ecfeff',
-          100: '#cffafe',
-          200: '#a5f3fc',
-          300: '#67e8f9',
-          400: '#22d3ee',
-          500: '#06b6d4',
-          600: '#0891b2',
-          700: '#0e7490',
-          800: '#155e75',
-          900: '#164e63',
-          950: '#083344',
+          50:  '#f6f7f0',
+          100: '#e9ecda',
+          200: '#d3d9b6',
+          300: '#b5bf87',
+          400: '#96a45e',
+          500: '#7a8a43',
+          600: '#5f6d32',
+          700: '#4a5528',
+          800: '#3c4422',
+          900: '#323a1e',
+          950: '#191d0e',
         },
         // Semantic colors
         success: {
@@ -53,14 +53,14 @@ const config: Config = {
           500: '#ef4444',
           700: '#b91c1c',
         },
-        // Neutrals
-        background: '#ffffff',
-        foreground: '#0f172a',
+        // Neutrals — warm off-white backgrounds
+        background: '#fafaf8',
+        foreground: '#2a231d',
         muted: {
-          DEFAULT: '#f8fafc',
-          foreground: '#64748b',
+          DEFAULT: '#f5f4f0',
+          foreground: '#6e665e',
         },
-        border: '#e2e8f0',
+        border: '#e8e6e0',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

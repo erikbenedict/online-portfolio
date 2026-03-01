@@ -28,7 +28,6 @@ export interface Project {
 export interface Skill {
   name: string;
   category: 'frontend' | 'backend' | 'cloud' | 'tools';
-  proficiency: number; // 1-5
   description: string;
   icon?: string;
 }

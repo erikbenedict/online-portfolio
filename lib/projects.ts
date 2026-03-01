@@ -9,7 +9,7 @@ export const projects: Project[] = [
     category: 'full-stack',
     tags: ['React', 'TypeScript', 'Azure Functions', 'SQL Server', 'REST APIs', 'Contentful'],
     image: '/images/virgin-bay-calculator.jpg',
-    liveUrl: 'https://virginbay.com',
+    liveUrl: 'https://virginbay.com/roi-calculator',
     featured: true,
     
     challenge: 'Virgin Bay Mortgage needed a modern, automated property valuation tool that could provide instant, accurate assessments for their clients in the US Virgin Islands market. Traditional methods were time-consuming and couldn\'t account for unique factors affecting property values in their local market, including rental potential and condo-specific variables.',
@@ -60,7 +60,6 @@ export const projects: Project[] = [
     category: 'full-stack',
     tags: ['React', 'TypeScript', 'Azure', 'Strapi CMS', 'AI/ML', 'Behavioral Science'],
     image: '/images/mindster.jpg',
-    liveUrl: 'https://www.mindster.health',
     featured: true,
     
     challenge: 'The proliferation of digital tools claiming to enhance personal productivity and well-being has not substantially addressed the psychological underpinnings of behaviors like emotional eating. Existing solutions often overlook the mental models, psychological assessments, and nuances unique to individual users, presenting a significant unmet need.',
@@ -162,6 +161,7 @@ export const projects: Project[] = [
     category: 'full-stack',
     tags: ['HubSpot', 'Shopify', 'Next.js', 'Multi-Category Platform', 'Rapid Delivery'],
     image: '/images/live-cell-algae.jpg',
+    liveUrl: 'https://thelivecellalgaegroup.com/',
     featured: true,
     
     challenge: 'Live Cell Algae Group (formerly EnSoil) needed to evolve from a single-product agricultural brand into a comprehensive multi-category platform showcasing their revolutionary algae technology across agriculture, lawn care, beauty, pharmaceuticals, and animal nutrition markets. The rebrand required complete rearchitecture of their digital presence to support multiple product lines, diverse customer segments, and sophisticated lead generation - all under aggressive timeline constraints.',
