@@ -110,7 +110,7 @@ export default function ContactPage() {
               {/* Links */}
               <div className="space-y-4">
                 <a
-                  href="mailto:erikbenedict.dev@gmail.com"
+                  href="mailto:erik.r.benedict@gmail.com"
                   className="flex items-center gap-3 p-4 rounded-xl border bg-white hover:shadow-md transition-shadow group"
                 >
                   <div className="w-10 h-10 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center shrink-0">
@@ -121,7 +121,7 @@ export default function ContactPage() {
                       Email
                     </div>
                     <div className="text-sm font-semibold text-foreground group-hover:text-accent-600 transition-colors">
-                      erikbenedict.dev@gmail.com
+                      erik.r.benedict@gmail.com
                     </div>
                   </div>
                 </a>
@@ -306,10 +306,10 @@ export default function ContactPage() {
                           <p className="text-sm text-red-700 mt-0.5">
                             {errorMessage} You can also email me directly at{' '}
                             <a
-                              href="mailto:erikbenedict.dev@gmail.com"
+                              href="mailto:erik.r.benedict@gmail.com"
                               className="underline font-medium"
                             >
-                              erikbenedict.dev@gmail.com
+                              erik.r.benedict@gmail.com
                             </a>
                           </p>
                         </div>
