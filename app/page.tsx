@@ -18,7 +18,7 @@ export default function HomePage() {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Microsoft Certified Azure Developer with 2+ years delivering production systems. 
+              Microsoft Certified Azure Developer with experience delivering production systems. 
               Specializing in React, Next.js, TypeScript, and scalable cloud architectures.
             </p>
             

@@ -10,8 +10,6 @@ const nextConfig = {
       },
     ],
   },
-  // Azure Static Web Apps configuration
-  output: 'standalone',
   trailingSlash: true,
 }
 
