@@ -7,37 +7,38 @@ export interface LinkButtonProps extends ComponentPropsWithoutRef<typeof Link> {
   size?: 'sm' | 'md' | 'lg'
 }
 
-export default function LinkButton({ 
-  className, 
-  variant = 'primary', 
+export default function LinkButton({
+  className,
+  variant = 'primary',
   size = 'md',
   children,
-  ...props 
+  ...props
 }: LinkButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-600 focus-visible:ring-offset-2'
-  
+  const baseStyles =
+    'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background'
+
   const variants = {
-    primary: 'bg-primary-700 text-white hover:bg-primary-800 shadow-sm',
-    secondary: 'bg-muted text-foreground hover:bg-muted/80',
-    outline: 'border-2 border-primary-700 text-primary-700 hover:bg-primary-50',
-    ghost: 'text-foreground hover:bg-muted',
-    accent: 'bg-accent-600 text-white hover:bg-accent-700 shadow-sm',
+    primary:
+      'bg-primary-700 text-white hover:bg-primary-800 shadow-sm dark:bg-primary-200 dark:text-primary-900 dark:hover:bg-primary-100',
+    secondary:
+      'bg-muted text-foreground hover:bg-muted/80',
+    outline:
+      'border-2 border-primary-700 text-primary-700 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-300 dark:hover:bg-primary-900/30',
+    ghost:
+      'text-foreground hover:bg-muted',
+    accent:
+      'bg-accent-600 text-white hover:bg-accent-700 shadow-sm dark:bg-accent-500 dark:hover:bg-accent-400',
   }
-  
+
   const sizes = {
     sm: 'h-9 px-3 text-sm rounded-lg',
     md: 'h-11 px-6 text-base rounded-lg',
     lg: 'h-14 px-8 text-lg rounded-xl',
   }
-  
+
   return (
     <Link
-      className={cn(
-        baseStyles,
-        variants[variant],
-        sizes[size],
-        className
-      )}
+      className={cn(baseStyles, variants[variant], sizes[size], className)}
       {...props}
     >
       {children}

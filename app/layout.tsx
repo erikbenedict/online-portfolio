@@ -12,13 +12,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Erik Benedict | Full-Stack Software Engineer',
-  description: 'Microsoft Certified Azure Developer specializing in React, Next.js, TypeScript, and cloud-native architectures. 2+ years building production systems for startups and enterprises.',
+  description: 'Microsoft Certified Azure Developer specializing in React, Next.js, TypeScript, and cloud-native architectures. Building production systems for startups and enterprises.',
   keywords: ['Full-Stack Developer', 'Azure Developer', 'React', 'Next.js', 'TypeScript', 'Cloud Engineer'],
   authors: [{ name: 'Erik Benedict' }],
   openGraph: {
     title: 'Erik Benedict | Full-Stack Software Engineer',
     description: 'Microsoft Certified Azure Developer specializing in React, Next.js, TypeScript, and cloud-native architectures.',
-    url: 'https://erikbenedict.com',
+    url: 'https://erikbenedict.dev',
     siteName: 'Erik Benedict Portfolio',
     locale: 'en_US',
     type: 'website',
@@ -41,6 +41,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon-dark.ico" />
+      </head>
       <body className="antialiased">
         <ThemeProvider>
           <Header />

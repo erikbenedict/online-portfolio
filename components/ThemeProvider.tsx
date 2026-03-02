@@ -21,13 +21,10 @@ export function useTheme() {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light')
 
-  // On mount, read from localStorage or system preference
+  // On mount, restore from localStorage
   useEffect(() => {
     const stored = localStorage.getItem('theme') as Theme | null
-    if (stored) {
-      setTheme(stored)
-      document.documentElement.classList.toggle('dark', stored === 'dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (stored === 'dark') {
       setTheme('dark')
       document.documentElement.classList.add('dark')
     }
