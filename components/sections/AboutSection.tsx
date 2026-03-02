@@ -94,7 +94,7 @@ export default function AboutSection() {
                 continue growing as an engineer.
               </p>
               <a
-                href="/resume/Erik-Benedict-Resume.pdf"
+                href="/Erik-Benedict-Resume.pdf"
                 download
                 className="inline-flex items-center gap-2 text-accent-600 font-medium hover:text-accent-700 transition-colors group"
               >
