@@ -33,9 +33,9 @@ export default function Navigation() {
           <Link
             key={item.href}
             href={item.href}
-            className={`text-sm font-medium px-3 py-2 rounded-md transition-colors hover:text-accent-600 hover:bg-accent-50 relative ${
+            className={`text-sm font-medium px-3 py-2 rounded-md transition-colors hover:text-accent-600 dark:hover:text-accent-400 hover:bg-accent-50 dark:hover:bg-accent-900/30 relative ${
               isActive
-                ? 'text-foreground bg-accent-50'
+                ? 'text-foreground bg-accent-50 dark:bg-accent-900/30'
                 : 'text-muted-foreground'
             }`}
           >

@@ -94,9 +94,9 @@ export default function AboutSection() {
                 continue growing as an engineer.
               </p>
               <a
-                href="/Erik-Benedict-Resume.pdf"
+                href="/resume/Erik-Benedict-Resume.pdf"
                 download
-                className="inline-flex items-center gap-2 text-accent-600 font-medium hover:text-accent-700 transition-colors group"
+                className="inline-flex items-center gap-2 text-accent-600 dark:text-accent-400 font-medium hover:text-accent-700 dark:hover:text-accent-300 transition-colors group"
               >
                 Download Resume
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -117,9 +117,9 @@ export default function AboutSection() {
                   <motion.div
                     key={item.title}
                     variants={fadeUp}
-                    className="flex gap-4 rounded-xl border bg-white p-5 shadow-sm"
+                    className="flex gap-4 rounded-xl border border-border bg-white dark:bg-surface p-5 shadow-sm"
                   >
-                    <div className="shrink-0 w-10 h-10 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center">
+                    <div className="shrink-0 w-10 h-10 rounded-lg bg-accent-100 dark:bg-accent-900/40 text-accent-600 dark:text-accent-400 flex items-center justify-center">
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>

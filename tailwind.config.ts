@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -54,13 +55,14 @@ const config: Config = {
           700: '#b91c1c',
         },
         // Neutrals — warm off-white backgrounds
-        background: '#fafaf8',
-        foreground: '#2a231d',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         muted: {
-          DEFAULT: '#f5f4f0',
-          foreground: '#6e665e',
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
-        border: '#e8e6e0',
+        border: 'hsl(var(--border))',
+        surface: 'hsl(var(--surface))',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

@@ -20,7 +20,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index, isOpen, onToggle }: ProjectCardProps) {
   return (
     <div
-      className={`rounded-xl border bg-white shadow-sm overflow-hidden transition-shadow duration-300 ${
+      className={`rounded-xl border border-border bg-white dark:bg-surface shadow-sm overflow-hidden transition-shadow duration-300 ${
         isOpen ? 'shadow-md' : 'hover:shadow-md'
       }`}
     >
@@ -32,13 +32,13 @@ export default function ProjectCard({ project, index, isOpen, onToggle }: Projec
       >
         <div className="flex items-start gap-4 min-w-0">
           {/* Index number */}
-          <span className="shrink-0 w-8 h-8 rounded-full bg-accent-100 text-accent-700 text-sm font-bold flex items-center justify-center mt-0.5">
+          <span className="shrink-0 w-8 h-8 rounded-full bg-accent-100 dark:bg-accent-900/40 text-accent-700 dark:text-accent-400 text-sm font-bold flex items-center justify-center mt-0.5">
             {String(index + 1).padStart(2, '0')}
           </span>
 
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2 mb-1">
-              <h3 className="text-lg font-semibold text-foreground group-hover:text-accent-600 transition-colors">
+              <h3 className="text-lg font-semibold text-foreground group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
                 {project.title}
               </h3>
               <Badge variant="secondary" className="text-xs">
@@ -75,7 +75,7 @@ export default function ProjectCard({ project, index, isOpen, onToggle }: Projec
 
       {/* Expanded content */}
       {isOpen && (
-        <div className="border-t bg-muted/50">
+        <div className="border-t border-border bg-muted/50 dark:bg-muted/30">
           <div className="px-6 py-6 space-y-6">
             {/* Meta row */}
             <div className="flex flex-wrap gap-6 text-sm">
@@ -96,7 +96,7 @@ export default function ProjectCard({ project, index, isOpen, onToggle }: Projec
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-accent-600 hover:text-accent-700 font-medium"
+                  className="flex items-center gap-1.5 text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 font-medium"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <ExternalLink className="w-4 h-4" />
@@ -137,9 +137,9 @@ export default function ProjectCard({ project, index, isOpen, onToggle }: Projec
                       {project.results.map((result) => (
                         <div
                           key={result.metric}
-                          className="rounded-lg border bg-white p-3 text-center"
+                          className="rounded-lg border border-border bg-white dark:bg-surface p-3 text-center"
                         >
-                          <div className="text-xl font-bold text-accent-600 mb-0.5">
+                          <div className="text-xl font-bold text-accent-600 dark:text-accent-400 mb-0.5">
                             {result.value}
                           </div>
                           <div className="text-xs font-medium text-foreground">
@@ -170,7 +170,7 @@ export default function ProjectCard({ project, index, isOpen, onToggle }: Projec
                           {layer.technologies.map((tech) => (
                             <span
                               key={tech}
-                              className="inline-flex items-center rounded-md bg-accent-50 border border-accent-200 px-1.5 py-0.5 text-xs font-medium text-accent-700 mr-1 mb-1"
+                              className="inline-flex items-center rounded-md bg-accent-50 dark:bg-accent-950/50 border border-accent-200 dark:border-accent-800 px-1.5 py-0.5 text-xs font-medium text-accent-700 dark:text-accent-400 mr-1 mb-1"
                             >
                               {tech}
                             </span>
