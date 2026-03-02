@@ -72,6 +72,11 @@ export default function ContactPage() {
     }
   }
 
+  const inputBase =
+    'w-full rounded-lg border px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors bg-white dark:bg-surface'
+  const inputNormal = 'border-border'
+  const inputError = 'border-red-400 bg-red-50 dark:bg-red-950/20 dark:border-red-800'
+
   return (
     <div className="section min-h-screen">
       <div className="container">
@@ -111,16 +116,16 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <a
                   href="mailto:erik.r.benedict@gmail.com"
-                  className="flex items-center gap-3 p-4 rounded-xl border bg-white hover:shadow-md transition-shadow group"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-border bg-white dark:bg-surface hover:shadow-md transition-shadow group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-accent-100 dark:bg-accent-900/40 text-accent-600 dark:text-accent-400 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-sm font-medium text-muted-foreground">
                       Email
                     </div>
-                    <div className="text-sm font-semibold text-foreground group-hover:text-accent-600 transition-colors">
+                    <div className="text-sm font-semibold text-foreground group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
                       erik.r.benedict@gmail.com
                     </div>
                   </div>
@@ -130,16 +135,16 @@ export default function ContactPage() {
                   href="https://github.com/erikbenedict"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-4 rounded-xl border bg-white hover:shadow-md transition-shadow group"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-border bg-white dark:bg-surface hover:shadow-md transition-shadow group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 flex items-center justify-center shrink-0">
                     <Github className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-sm font-medium text-muted-foreground">
                       GitHub
                     </div>
-                    <div className="text-sm font-semibold text-foreground group-hover:text-accent-600 transition-colors">
+                    <div className="text-sm font-semibold text-foreground group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
                       github.com/erikbenedict
                     </div>
                   </div>
@@ -149,16 +154,16 @@ export default function ContactPage() {
                   href="https://linkedin.com/in/erikbenedict"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-4 rounded-xl border bg-white hover:shadow-md transition-shadow group"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-border bg-white dark:bg-surface hover:shadow-md transition-shadow group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
                     <Linkedin className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-sm font-medium text-muted-foreground">
                       LinkedIn
                     </div>
-                    <div className="text-sm font-semibold text-foreground group-hover:text-accent-600 transition-colors">
+                    <div className="text-sm font-semibold text-foreground group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
                       linkedin.com/in/erikbenedict
                     </div>
                   </div>
@@ -167,7 +172,7 @@ export default function ContactPage() {
 
               {/* Resume download */}
               <div className="rounded-xl bg-gradient-to-br from-primary-700 to-accent-600 p-px">
-                <div className="rounded-xl bg-white p-5">
+                <div className="rounded-xl bg-white dark:bg-surface p-5">
                   <h3 className="font-semibold text-foreground mb-1">
                     Looking for my resume?
                   </h3>
@@ -187,10 +192,10 @@ export default function ContactPage() {
 
             {/* Right: Form */}
             <div className="lg:col-span-3">
-              <div className="rounded-xl border bg-white p-8 shadow-sm">
+              <div className="rounded-xl border border-border bg-white dark:bg-surface p-8 shadow-sm">
                 {formState === 'success' ? (
                   <div className="flex flex-col items-center justify-center py-12 text-center">
-                    <div className="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-950/40 text-green-600 dark:text-green-400 flex items-center justify-center mb-4">
                       <CheckCircle className="w-8 h-8" />
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">
@@ -202,7 +207,7 @@ export default function ContactPage() {
                     </p>
                     <button
                       onClick={() => setFormState('idle')}
-                      className="text-sm text-accent-600 hover:text-accent-700 font-medium"
+                      className="text-sm text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 font-medium"
                     >
                       Send another message
                     </button>
@@ -225,14 +230,10 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Jane Smith"
-                          className={`w-full rounded-lg border px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors ${
-                            errors.name
-                              ? 'border-red-400 bg-red-50'
-                              : 'border-border bg-white'
-                          }`}
+                          className={`${inputBase} ${errors.name ? inputError : inputNormal}`}
                         />
                         {errors.name && (
-                          <p className="mt-1 text-xs text-red-600">
+                          <p className="mt-1 text-xs text-red-600 dark:text-red-400">
                             {errors.name}
                           </p>
                         )}
@@ -253,14 +254,10 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="jane@company.com"
-                          className={`w-full rounded-lg border px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors ${
-                            errors.email
-                              ? 'border-red-400 bg-red-50'
-                              : 'border-border bg-white'
-                          }`}
+                          className={`${inputBase} ${errors.email ? inputError : inputNormal}`}
                         />
                         {errors.email && (
-                          <p className="mt-1 text-xs text-red-600">
+                          <p className="mt-1 text-xs text-red-600 dark:text-red-400">
                             {errors.email}
                           </p>
                         )}
@@ -282,14 +279,10 @@ export default function ContactPage() {
                         onChange={handleChange}
                         rows={6}
                         placeholder="Tell me about the role or project you have in mind..."
-                        className={`w-full rounded-lg border px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors resize-none ${
-                          errors.message
-                            ? 'border-red-400 bg-red-50'
-                            : 'border-border bg-white'
-                        }`}
+                        className={`${inputBase} resize-none ${errors.message ? inputError : inputNormal}`}
                       />
                       {errors.message && (
-                        <p className="mt-1 text-xs text-red-600">
+                        <p className="mt-1 text-xs text-red-600 dark:text-red-400">
                           {errors.message}
                         </p>
                       )}
@@ -297,13 +290,13 @@ export default function ContactPage() {
 
                     {/* Error banner */}
                     {formState === 'error' && (
-                      <div className="flex items-start gap-3 rounded-lg bg-red-50 border border-red-200 p-4">
-                        <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-3 rounded-lg bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 p-4">
+                        <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 shrink-0 mt-0.5" />
                         <div>
-                          <p className="text-sm font-medium text-red-800">
+                          <p className="text-sm font-medium text-red-800 dark:text-red-300">
                             Couldn't send message
                           </p>
-                          <p className="text-sm text-red-700 mt-0.5">
+                          <p className="text-sm text-red-700 dark:text-red-400 mt-0.5">
                             {errorMessage} You can also email me directly at{' '}
                             <a
                               href="mailto:erik.r.benedict@gmail.com"
@@ -320,7 +313,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={formState === 'loading'}
-                      className="w-full flex items-center justify-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-base font-semibold text-white hover:bg-accent-700 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed transition-all"
+                      className="w-full flex items-center justify-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-base font-semibold text-white hover:bg-accent-700 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 dark:focus:ring-offset-surface disabled:opacity-60 disabled:cursor-not-allowed transition-all"
                     >
                       {formState === 'loading' ? (
                         <>

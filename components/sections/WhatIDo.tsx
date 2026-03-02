@@ -51,9 +51,9 @@ export default function WhatIDoSection() {
             <motion.div
               key={title}
               variants={fadeUp}
-              className="rounded-xl border bg-white p-6 shadow-sm"
+              className="rounded-xl border border-border bg-white dark:bg-surface p-6 shadow-sm"
             >
-              <div className="w-12 h-12 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-lg bg-accent-100 dark:bg-accent-900/40 text-accent-600 dark:text-accent-400 flex items-center justify-center mb-4">
                 <Icon className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-semibold mb-2">{title}</h3>

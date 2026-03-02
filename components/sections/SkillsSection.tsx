@@ -53,7 +53,7 @@ export default function SkillsSection() {
             whileInView="visible"
             viewport={viewportConfig}
           >
-            <div className="rounded-xl bg-white px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="rounded-xl bg-white dark:bg-surface px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="w-12 h-12 shrink-0">
                 <img
                   src="/images/ms-certified-badge.png"
@@ -89,7 +89,7 @@ export default function SkillsSection() {
                 <motion.div
                   key={key}
                   variants={fadeUp}
-                  className="rounded-xl bg-white p-6 shadow-sm"
+                  className="rounded-xl bg-white dark:bg-surface p-6 shadow-sm"
                 >
                   {/* Category header */}
                   <div className="flex items-center gap-3 mb-6 pb-4 border-b border-accent-500">
